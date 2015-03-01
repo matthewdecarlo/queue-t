@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'oauths/oauth'
+  post "oauth/callback" => "oauths#callback"
+  get "oauth/callback" => "oauths#callback" # for use with Github, Facebook
+  get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
