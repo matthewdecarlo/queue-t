@@ -1,0 +1,11 @@
+<%= form_tag user_sessions_path, method: :post do |f| %>
+  
+  <%= label_tag :email %>
+  <%= email_field_tag :email %><br />
+
+  <%= label_tag :password %>
+  <%= password_field_tag :password %><br />
+
+  <%= submit_tag 'Login' %>
+
+<% end %>

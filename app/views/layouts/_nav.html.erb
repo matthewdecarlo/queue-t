@@ -1,7 +1,8 @@
 <nav> 
+  <%= link_to "Home", root_path %>
   <% if current_user %>
     <li>
-      <a href="#">Hi, <%= current_user.username.titleize %>!</a>
+      Hi, <%= current_user.first_name.capitalize %>!
     </li>
     <li class="active">
       <%= link_to "Logout", logout_path, method: :delete %>
