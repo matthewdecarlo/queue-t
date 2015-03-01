@@ -1,0 +1,28 @@
+<%= form_for(@group) do |f| %>
+  <% if @group.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@group.errors.count, "error") %> prohibited this group from being saved:</h2>
+
+      <ul>
+      <% @group.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.label "Group Name" %>
+    <%= f.text_field :name, value: @group_name %><br>
+
+    <%= f.label "Duration of Group" %>
+    <%= f.select(:type) do %>
+    <%= content_tag(:option, "Select", readonly: true, disabled: true, selected: true) -%>
+      <%= @timeframe.each do |t| -%>
+        <%= content_tag(:option, t) %>
+      <% end %>
+    <% end %><br>
+
+    <%= f.submit %>
+  </div>
+<% end %>

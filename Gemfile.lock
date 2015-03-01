@@ -28,6 +28,7 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     builder (3.2.2)
     capybara (2.4.4)
@@ -67,6 +68,8 @@ GEM
       sass (>= 3.2.0, < 3.4)
     hike (1.2.3)
     i18n (0.7.0)
+    inflections (0.0.5)
+      activesupport (>= 2.2.1)
     jbuilder (2.2.8)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -123,7 +126,6 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
-      json (~> 1.4)
     rspec-core (3.2.1)
       rspec-support (~> 3.2.0)
     rspec-expectations (3.2.0)
@@ -193,6 +195,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   capybara
   codecov
   coffee-rails (~> 4.0.0)
@@ -200,6 +203,7 @@ DEPENDENCIES
   factory_girl
   faker
   foundation-rails
+  inflections
   jbuilder (~> 2.0)
   jquery-rails
   pg

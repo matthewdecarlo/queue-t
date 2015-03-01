@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   resources :queues
 
+  resources :groups
+
   get 'oauths/oauth'
   post "oauth/callback" => "oauths#callback"
   get "oauth/callback" => "oauths#callback" # for use with Github, Facebook

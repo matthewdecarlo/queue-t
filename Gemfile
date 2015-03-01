@@ -25,6 +25,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'sorcery'
 gem 'faker'
 gem 'foundation-rails'
+gem 'inflections'
 
 # gem 'treat' # Natural language processing framework for Ruby.
 
@@ -32,6 +33,7 @@ gem 'foundation-rails'
 group :development do
   gem 'spring'
   gem 'pry'
+  gem 'awesome_print', :require => 'ap'
 end
 
 # Use ActiveModel has_secure_password
