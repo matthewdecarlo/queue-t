@@ -2,8 +2,8 @@ $(".groups.new").ready(function(){
   $('#group_type').on('change', function(){
     var timeframe = $('#group_type').val();
     var beginDate = calculateBeginDate(timeframe);
-    var endDate = new Date(beginDate)
-    endDate = calculateEndDate(timeframe, endDate);
+
+    var endDate = calculateEndDate(timeframe, beginDate);
 
     beginDate = formatDate(beginDate);
     endDate = formatDate(endDate);
@@ -27,7 +27,7 @@ function calculateBeginDate(timeframe) {
 }
 
 function calculateEndDate(timeframe, beginDate) {
-  var endDate = beginDate;
+  var endDate = new Date(beginDate);
   switch(timeframe) {
     case "weekly":
       endDate.setDate(beginDate.getDate()+6);
