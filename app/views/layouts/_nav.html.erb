@@ -2,8 +2,12 @@
   <%= link_to "Home", root_path %>
   <% if current_user %>
     <li>
-      Hi, <%= current_user.first_name.capitalize %>!
+      Hi, <%= current_user.first_name.capitalize %>! (<%= current_user.role %>)
     </li>
+    <% if is_admin? %> 
+    <li>Menu for Admin
+    </li>
+    <% end %>
     <li class="active">
       <%= link_to "Logout", logout_path, method: :delete %>
     </li>

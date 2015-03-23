@@ -11,7 +11,7 @@ class User < ActiveRecord::Base
 
 
   belongs_to :cohort
-  has_many :memberships
+  has_many :memberships, foreign_key: :member_id
   has_many :groups, through: :memberships
   has_many :requests, as: :requestable
 
