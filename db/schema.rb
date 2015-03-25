@@ -44,18 +44,21 @@ ActiveRecord::Schema.define(version: 20150228234207) do
   end
 
   create_table "memberships", force: true do |t|
-    t.integer  "member_id_id"
-    t.integer  "group_id_id"
+    t.integer  "member_id"
+    t.integer  "group_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "requests", force: true do |t|
     t.integer  "requestable_id"
+    t.string   "requestable_type"
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "requests", ["requestable_id", "requestable_type"], name: "index_requests_on_requestable_id_and_requestable_type", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                                    null: false
