@@ -1,3 +1,4 @@
+require_relative 'parse_questions'
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -20,6 +21,9 @@ end
   username = Faker::Name.first_name
   User.create(email: "#{username}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", cohort: squirrel, role: "student")
 end
+
+question_titles.each { |title| Request.create(title: title) }
+
 
 # weekly group
 # Group.create(name: , type: , begin_date: , end_date: )
