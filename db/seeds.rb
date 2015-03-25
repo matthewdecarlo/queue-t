@@ -14,12 +14,12 @@ User.create(email: "test@test.com", first_name: "test", last_name: "test", passw
 
 3.times do 
   username = Faker::Name.first_name
-  User.create(email: "#{username}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", role: "teacher")
+  User.create(email: "#{username.downcase}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", role: "teacher")
 end
 
 20.times do 
   username = Faker::Name.first_name
-  User.create(email: "#{username}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", cohort: squirrel, role: "student")
+  User.create(email: "#{username.downcase}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", cohort: squirrel, role: "student")
 end
 
 question_titles.each { |title| Request.create(title: title) }

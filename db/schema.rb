@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20150228234207) do
 
   create_table "groups", force: true do |t|
     t.string   "name"
-    t.string   "type"
+    t.string   "kind"
     t.datetime "begin_date"
     t.datetime "end_date"
     t.datetime "created_at"
