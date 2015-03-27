@@ -18,6 +18,8 @@ Rails.application.routes.draw do
   get 'username' => 'users#username'
 
   resources :groups
+  resources :requests
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
