@@ -157,6 +157,9 @@
 <row name="archived?" null="1" autoincrement="0">
 <datatype>bit</datatype>
 <default>NULL</default></row>
+<row name="panic?" null="1" autoincrement="0">
+<datatype>bit</datatype>
+<default>NULL</default></row>
 <row name="created_at" null="1" autoincrement="0">
 <datatype>DATETIME</datatype>
 <default>NULL</default></row>
