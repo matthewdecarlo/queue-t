@@ -35,7 +35,7 @@
     <type label="SET" length="1" sql="SET" quote=""/>
     <type label="Bit" length="0" sql="bit" quote=""/>
   </group>
-</datatypes><table x="255" y="90" name="Users (Admins, Teachers, Students)">
+</datatypes><table x="303" y="261" name="Users (Admins, Teachers, Students)">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -65,7 +65,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="690" y="90" name="Memberships">
+<table x="651" y="382" name="Memberships">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -87,7 +87,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="228" y="370" name="Cohorts">
+<table x="307" y="97" name="Cohorts">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -107,7 +107,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="984" y="91" name="Groups">
+<table x="305" y="493" name="Groups">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
@@ -133,7 +133,7 @@
 <part>id</part>
 </key>
 </table>
-<table x="711" y="450" name="Requests">
+<table x="121" y="383" name="Requests">
 <row name="id" null="1" autoincrement="1">
 <datatype>INTEGER</datatype>
 <default>NULL</default></row>
