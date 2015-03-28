@@ -1,5 +1,5 @@
 <p align="center">
-<img src="logo.png">
+<img src="logo.png" height="300">
 </p>
 
 ## Say Hello to Queue-t
