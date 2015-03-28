@@ -1,4 +1,6 @@
-->![Queue-t Logo](logo.png)<-
+<p align="center">
+<img src="logo.png">
+</p>
 
 ## Say Hello to Queue-t
 > Queue-t is the cutest little queuing app there is.  Queue-t is designed to help teachers better answer students questions.  In settings such as labs, homework, and individual study there are often times where students will have similar questions.
