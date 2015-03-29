@@ -16,18 +16,15 @@ class TeamsController < ApplicationController
 
     @all_kinds = Team.kinds   # ["daily", "weekly", "long-term"]
     @kinds = []
-    @kinds = params[:kind][:ids] if params[:kinds]
   end
 
   def edit
-    @team = Team.new
+    @team = Team.find(params[:id])
     @all_students = User.student
     @members = @team.members
 
-
     @all_kinds = Team.kinds   # ["daily", "weekly", "long-term"]
-    @kinds = []
-    @kinds = params[:kind][:ids] if params[:kinds]
+    @kinds = @team.kind
   end
 
   def create
@@ -36,14 +33,10 @@ class TeamsController < ApplicationController
     
     @team = Team.new(team_attr)
     
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-    puts member_params
-    # member_params[:ids].each{ |v| puts v unless v.length == 0 }
-    member_params[:ids].each { |value| @team.members << User.find(value) unless value.length == 0 }
-    puts "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@"
-
     respond_to do |format|
       if @team.save
+        member_params[:ids].each { |value| @team.members << User.find(value) unless value.length == 0 }
+
         format.html { redirect_to @team, notice: 'Team was successfully created.' }
         format.json { render :show, status: :created, location: @team }
       else

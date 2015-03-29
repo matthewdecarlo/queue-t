@@ -16,18 +16,17 @@
 
   <%= f.label :kind %>
   <%#= f.text_field :kind %>
-  <%= select_tag :kind, options_for_select(@all_kinds, :selected=>@kinds) %><br />
-
+  <%= select_tag :kind, options_for_select(@all_kinds, :selected => @kinds) %><br />
+  
   <%= f.label :begin_date %>
   <%= f.date_field :begin_date %><br />
 
   <%= f.label :end_date %>
   <%= f.date_field :end_date %><br />
 
-  <%= collection_check_boxes( :member, :ids, @all_students, :id, :name, checked: @members ) %><br />
+  <%= collection_check_boxes(:member, :ids, @all_students, :id, :name, checked: @members) %><br />
 
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-2

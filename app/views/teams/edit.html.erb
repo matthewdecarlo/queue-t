@@ -1,6 +1,8 @@
 <h1>Editing team</h1>
 
-<%= render 'form' %>
+<%#= render 'form', collection: @members %>
+<%= render 'form', collection: @members,
+           as: :member, locals: {team: @team} %>
 
 <%= link_to 'Show', @team %> |
 <%= link_to 'Back', teams_path %>
