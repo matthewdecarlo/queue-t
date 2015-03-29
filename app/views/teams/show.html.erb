@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+Team Name: <%= @team.name %> <br>
+<%= @team.kind %> <br />
+<%= @team.begin_from %> ~ <%= @team.end_to %><br />
+<br />
+Members: <br />
+<% @team.members.each do |member| %>
+  <%= link_to "#{member.first_name} #{member.last_name}", user_path %><br />
+  <br />
+<% end %><br />
+<br />
+<%= link_to 'Edit', edit_team_path(@team) %> |
+<%= link_to 'Back', teams_path %>

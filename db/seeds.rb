@@ -22,19 +22,19 @@ end
   User.create(email: "#{username.downcase}@test.com" , first_name: username, last_name: Faker::Name.last_name, password: "test", password_confirmation: "test", cohort: squirrel, role: "student")
 end
 
-group_kinds = ["weekly", "daily", "longterm"]
+team_kinds = ["weekly", "daily", "longterm"]
 20.times do
   date = Time.now - rand(7..15)
-  Group.create(name: Faker::Company.name, kind: group_kinds.sample, begin_date: date, end_date: date + rand(2..5))
+  Team.create(name: Faker::Company.name, kind: team_kinds.sample, begin_date: date, end_date: date + rand(2..5))
 end
 
-requestable_types = ["User", "Group"]
+requestable_types = ["User", "Team"]
 question_titles.each { |title| Request.create(title: title, requestable_id: rand(1..23), requestable_type: requestable_types.sample) }
 
-10.times { Membership.create(member_id: rand(1..23), group_id: rand(1..23)) }
+10.times { Membership.create(member_id: rand(1..23), team_id: rand(1..23)) }
 
-# weekly group
-# Group.create(name: , type: , begin_date: , end_date: )
+# weekly team
+# Team.create(name: , type: , begin_date: , end_date: )
 
 
-# daily group
+# daily team

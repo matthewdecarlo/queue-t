@@ -1,0 +1,60 @@
+<!-- DISPLAYING ALL STUDENTS  -->
+  <%= form_tag do %>
+    <%= label_tag "add a team member" %><br />
+    <%#= select_tag "add a team member", options_from_collection_for_select(@students, "id", "first_name") %>
+      <% @students.each do |student| %>
+        <%= check_box_tag student.id, student.id %>
+        <%= label_tag  student.first_name %><br />
+      <% end %>
+  <% end %>
+
+
+
+<!-- EXAMPLE -->
+<%= form_for @person do |f| %>
+  Addresses:
+  <ul>
+    <%= f.fields_for :addresses do |addresses_form| %>
+      <li>
+        <%= addresses_form.label :kind %>
+        <%= addresses_form.text_field :kind %>
+ 
+        <%= addresses_form.label :street %>
+        <%= addresses_form.text_field :street %>
+        ...
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<!-- APPLYING TO QT -->
+  Add a team member: 
+  <% f.fields_for :students do |students_form| %>
+    <%= students_form.label :first_name %>
+    <%= students_form.text_field :first_name %><br />
+    <br />
+    <br />
+    <br />
+
+    <% @students.each do |student| %>
+      <%= check_box_tag student.id, student.id %>
+      <%= label_tag  student.first_name %><br />
+    <% end %>
+
+
+<!-- PATROLL example -->
+<%= form_tag("/search", method: "get") %>
+  <%= collection_check_boxes( :target, :ids, @all_targets, :id, :name, checked: @targets ) %>
+  <%= submit_tag 'Search' %>
+
+def search
+  @all_targets = Target.all
+
+  @targets = []
+  @targets = params[:target][:ids] if params[:target]
+
+  searcher = UserPageSearch.new(user: current_user)
+
+  @usersearch = searcher.search(@targets)
+end

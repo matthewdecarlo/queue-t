@@ -1,6 +1,6 @@
-class CreateGroups < ActiveRecord::Migration
+class CreateTeams < ActiveRecord::Migration
   def change
-    create_table :groups do |t|
+    create_table :teams do |t|
       t.string :name
       t.string :kind
       t.datetime :begin_date
@@ -10,3 +10,4 @@ class CreateGroups < ActiveRecord::Migration
     end
   end
 end
+

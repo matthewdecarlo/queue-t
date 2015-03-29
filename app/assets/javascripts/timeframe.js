@@ -1,6 +1,6 @@
-$(".groups.new").ready(function(){
-  $('#group_type').on('change', function(){
-    var timeframe = $('#group_type').val();
+$(".teams.new").ready(function(){
+  $('#team_type').on('change', function(){
+    var timeframe = $('#team_type').val();
     var beginDate = calculateBeginDate(timeframe);
 
     var endDate = calculateEndDate(timeframe, beginDate);
@@ -8,8 +8,8 @@ $(".groups.new").ready(function(){
     beginDate = formatDate(beginDate);
     endDate = formatDate(endDate);
 
-    $('#group_begin_date').val(beginDate);
-    $('#group_end_date').val(endDate);
+    $('#team_begin_date').val(beginDate);
+    $('#team_end_date').val(endDate);
   });
 });
 
