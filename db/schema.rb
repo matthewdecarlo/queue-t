@@ -34,18 +34,9 @@ ActiveRecord::Schema.define(version: 20150228234207) do
     t.datetime "updated_at"
   end
 
-  create_table "groups", force: true do |t|
-    t.string   "name"
-    t.string   "kind"
-    t.datetime "begin_date"
-    t.datetime "end_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "memberships", force: true do |t|
     t.integer  "member_id"
-    t.integer  "group_id"
+    t.integer  "team_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -59,6 +50,15 @@ ActiveRecord::Schema.define(version: 20150228234207) do
   end
 
   add_index "requests", ["requestable_id", "requestable_type"], name: "index_requests_on_requestable_id_and_requestable_type", using: :btree
+
+  create_table "teams", force: true do |t|
+    t.string   "name"
+    t.string   "kind"
+    t.datetime "begin_date"
+    t.datetime "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                                    null: false

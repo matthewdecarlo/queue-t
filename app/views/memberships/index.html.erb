@@ -1,0 +1,24 @@
+<h1>Memberships#index</h1>
+<p>Find me in app/views/memberships/index.html.erb</p>
+
+<%= link_to "Add membership", new_membership_path %><br />
+<br />
+<br />
+<% @memberships.each do |membership| %>
+  <%= link_to "membership # #{membership.id}", membership_path(membership.id) %>
+  <%= link_to 'Edit', edit_membership_path(membership) %>
+  <%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %> <br />
+<% end %>
+<br /><br />
+
+<% @memberships.each do |m| %>
+  <%= link_to m.team.name, team_path(m.team) %>: <br />
+  <% m.team.members.each do |s| %>
+    <%= link_to s.first_name, user_path(s) %><br />
+  <% end %><br />
+<% end %>
+<br />
+<br />
+<br />
+
+number of memberships: <%= @all_memberships.count %><br /><br />
