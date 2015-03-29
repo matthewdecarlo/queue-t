@@ -28,7 +28,6 @@
   <%#= f.check_box(:member, member.name, { class: "User", multiple: true, checked: (@members.include? member ? true : false)}, member.id ) %>
 <%# end %>
 
-WORKING<br />
   <%= collection_check_boxes(:member, :ids, @all_students, :id, :name, checked: @members) %><br />
 
   <div class="actions">
