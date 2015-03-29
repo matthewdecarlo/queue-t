@@ -21,4 +21,14 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true
 
   validates :email, uniqueness: true
+
+
+  def self.student
+    where(role: 'student')
+  end
+
+  def self.teacher
+    where(role: 'teacher')
+  end
+
 end

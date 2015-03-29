@@ -17,7 +17,8 @@ class TeamsController < ApplicationController
   def new
     @team = Team.new
     @user = User.new
-    @students = User.all
+    @students = User.student
+    @teachers = User.teacher
   end
 
   # GET /teams/1/edit
