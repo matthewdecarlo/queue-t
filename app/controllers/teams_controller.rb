@@ -28,10 +28,7 @@ class TeamsController < ApplicationController
   end
 
   def create
-    team_attr = team_params
-    team_attr["kind"] = kind_params
-    
-    @team = Team.new(team_attr)
+    @team = Team.new(team_params)
     
     respond_to do |format|
       if @team.save
@@ -47,11 +44,8 @@ class TeamsController < ApplicationController
   end
 
   def update
-    team_attr = team_params
-    team_attr["kind"] = kind_params
-    
     respond_to do |format|
-      if @team.update(team_attr)
+      if @team.update(team_params)
         member_params[:ids].each { |value| Membership.where({team: @team}).find_or_create_by!({member_id: value}) unless value.length == 0 }
           
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
@@ -84,9 +78,5 @@ class TeamsController < ApplicationController
 
     def member_params
       params.require(:member)
-    end
-
-    def kind_params
-      params.require(:kind)
     end
 end

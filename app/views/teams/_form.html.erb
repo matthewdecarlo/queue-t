@@ -15,15 +15,20 @@
   <%= f.text_field :name %><br />
 
   <%= f.label :kind %>
-  <%#= f.text_field :kind %>
-  <%= select_tag :kind, options_for_select(@all_kinds, :selected => @kinds) %><br />
-  
+  <%= f.select :kind, options_for_select(@all_kinds, selected: @kinds) %><br />
+
   <%= f.label :begin_date %>
   <%= f.date_field :begin_date %><br />
 
   <%= f.label :end_date %>
   <%= f.date_field :end_date %><br />
 
+<!-- check_box(object_name, method, options = {}, checked_value = "1", unchecked_value = "0") -->
+<%# @all_students.each do |member| %>
+  <%#= f.check_box(:member, member.name, { class: "User", multiple: true, checked: (@members.include? member ? true : false)}, member.id ) %>
+<%# end %>
+
+WORKING<br />
   <%= collection_check_boxes(:member, :ids, @all_students, :id, :name, checked: @members) %><br />
 
   <div class="actions">

@@ -1,0 +1,15 @@
+<h4>My Info</h4>
+<%= current_user.name %><br />
+<%= current_user.quirk ? current_user.quirk : "No quirk" %><br />
+<%= link_to 'Delete', @user, method: :delete, data: { confirm: 'Are you sure?'} %> |
+<%= link_to 'Back', root_path %>
+<br />
+<br />
+<h4>My Teams/Pairs</h4>
+<% @my_teams.each do |t| %>
+  <%= t.name %><br />
+  <% t.members.each do |m| %>
+    <%= m.name %><br />
+  <% end %><br /><br />
+<% end %>
+

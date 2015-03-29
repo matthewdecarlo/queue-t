@@ -21,10 +21,6 @@ Rails.application.routes.draw do
   resources :requests
 
   resources :memberships
-  # get 'memberships' => 'memberships#index'
-  # get 'memberships/index' => 'memberships#index'
-  # get 'memberships/show'  => 'memberships#show'
-  # get 'memberships/edit'  => 'memberships#edit'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
