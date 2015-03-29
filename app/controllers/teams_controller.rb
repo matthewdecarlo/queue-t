@@ -47,8 +47,13 @@ class TeamsController < ApplicationController
   end
 
   def update
+    team_attr = team_params
+    team_attr["kind"] = kind_params
+    
     respond_to do |format|
-      if @team.update(team_params)
+      if @team.update(team_attr)
+        member_params[:ids].each { |value| Membership.where({team: @team}).find_or_create_by!({member_id: value}) unless value.length == 0 }
+          
         format.html { redirect_to @team, notice: 'Team was successfully updated.' }
         format.json { render :show, status: :ok, location: @team }
       else
