@@ -1,10 +1,15 @@
-<h4>My Pairing History</h4>
+<section class="large-8 columns">
+  <h4>My Pairing History</h4>
 
-<% @my_pairing_teams.each do |pairing| %>
-  Team name: <%= link_to pairing.name, team_path(pairing) %> <br />
-  kind: <%= pairing.kind %> <br />
-  on: <%= pairing.begin_from %> <br />
-  with: <% pairing.members.each do |m| %>
-    <%= m.name if m != current_user %>
-  <% end %><br /><br />
-<% end %>
+  <% @my_pairing_teams.each do |pairing| %>
+    <ul>Team name: <%= link_to pairing.name, team_path(pairing) %>
+      <li>kind: <%= pairing.kind %></li>
+      <li>on: <%= pairing.begin_from %></li>
+      <li>
+        with: <% pairing.members.each do |m| %>
+          <% if m != current_user %><%= m.name %><% end %>
+        <% end %>
+      </li>
+    </ul>
+  <% end %>
+</section>

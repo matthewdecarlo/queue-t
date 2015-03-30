@@ -1,5 +1,7 @@
-<h4>Current Teams</h4>
+<section class="large-4 columns">
+  <h4>Current Teams</h4>
 
-<% @current_teams.each do |team| %>
-  <%= link_to team.name, team_path(team) %><br />
-<% end %>
+  <% @current_teams.each do |team| %>
+    <subheader><%= link_to team.name, team_path(team) %></subheader><br />
+  <% end %>
+</section>

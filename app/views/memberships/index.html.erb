@@ -1,15 +1,16 @@
-<h1>Memberships#index</h1>
-<p>Find me in app/views/memberships/index.html.erb</p>
+<%= link_to "Add membership", new_membership_path, class: "button radius" %>
 
-<%= link_to "Add membership", new_membership_path %><br />
-<br />
-<br />
-<% @memberships.each do |membership| %>
-  membership <%= link_to "##{membership.id}", membership_path(membership.id) %>
-  <%= link_to 'Edit', edit_membership_path(membership) %>
-  <%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %> <br />
-<% end %>
-<br /><br />
+<table>
+  <tbody>
+    <% @memberships.each do |membership| %>
+    <tr>
+      <td><h4>membership <%= link_to "##{membership.id}", membership_path(membership.id) %></h4></td>
+      <td><%= link_to 'Edit', edit_membership_path(membership), class: "button secondary" %></td>
+      <td><%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert" %> <br /></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
 
 <% @memberships.each do |m| %>
   <%= link_to m.team.name, team_path(m.team) %>: <br />
