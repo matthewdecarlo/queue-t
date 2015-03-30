@@ -1,0 +1,5 @@
+<h4>Current Teams</h4>
+
+<% @current_teams.each do |team| %>
+  <%= link_to team.name, team_path(team) %><br />
+<% end %>
