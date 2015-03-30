@@ -13,8 +13,8 @@
     <% @teams.each do |team| %>
       <tr>
         <td><%= link_to team.name.capitalize, team %></td>
-        <td><%= link_to 'Edit', edit_team_path(team) %></td>
-        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_team_path(team), class: "button secondary" %></td>
+        <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert" %></td>
       </tr>
     <% end %>
   </tbody>

@@ -10,7 +10,7 @@
   <tbody>
     <% @requests.each do |request| %>
       <tr>
-        <td><h2><%= link_to request.title.capitalize, request %></h2></td>
+        <td><h4><%= link_to request.title.capitalize, request %></h4></td>
         <td><%= link_to 'Edit', edit_request_path(request), class: "button secondary"%></td>
         <td><%= link_to 'Remove', request, method: :delete, data: { confirm: 'Are you sure?' }, class: "button alert"%></td>
       </tr>

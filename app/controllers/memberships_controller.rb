@@ -2,7 +2,7 @@ class MembershipsController < ApplicationController
   def index
     @memberships = Membership.all
 
-    @all_memberships = Membership.group(:team_id).count
+    @all_memberships = Membership.group(:team_id).pluck(:team_id)
   end
 
   def show
