@@ -1,3 +1,20 @@
+<!-- TRYING -->
+  <%# @all_kinds.each_with_index do |value, index| %>
+    <%#= check_box :kind, index %><%#= value %>
+    <!-- "daily"=>{"0"=>"1"}, "weekly"=>{"1"=>"0"}, "long-term"=>{"2"=>"0"},  -->
+  <%# end %>  
+<br />
+<br />
+  <%# @all_kinds.each_with_index do |value, index| %>
+    <%#= check_box_tag :kind, :index, params[:kind] %><%#= value %>
+    <!-- "kind"=>"index", -->
+  <%# end %>
+<br />
+<br />kinds with collection_check_boxes
+  <%#= collection_check_boxes( :kind, :value, @all_kinds, :index, :value, checked: @kinds ) %>
+<br />
+
+
 <!-- DISPLAYING ALL STUDENTS  -->
   <%= form_tag do %>
     <%= label_tag "add a team member" %><br />
@@ -57,4 +74,13 @@ def search
   searcher = UserPageSearch.new(user: current_user)
 
   @usersearch = searcher.search(@targets)
+end
+
+
+<%= form_tag('/scrapers') do |f| %>
+  <%= select_tag "target", options_from_collection_for_select(@targets, "id", "first_name") %>
+  <%= submit_tag 'Start Scraping' %>
+
+def new
+  @targets = Target.all
 end

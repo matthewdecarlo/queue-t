@@ -5,6 +5,10 @@ class MembershipsController < ApplicationController
     @all_memberships = Membership.group(:team_id).count
   end
 
+  def show
+    @membership = Membership.find(params[:id])
+  end
+
   def new
     @membership = Membership.new({member: current_user})
   end

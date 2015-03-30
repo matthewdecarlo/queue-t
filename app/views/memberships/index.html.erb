@@ -5,7 +5,7 @@
 <br />
 <br />
 <% @memberships.each do |membership| %>
-  <%= link_to "membership # #{membership.id}", membership_path(membership.id) %>
+  membership <%= link_to "##{membership.id}", membership_path(membership.id) %>
   <%= link_to 'Edit', edit_membership_path(membership) %>
   <%= link_to 'Destroy', membership, method: :delete, data: { confirm: 'Are you sure?' } %> <br />
 <% end %>
